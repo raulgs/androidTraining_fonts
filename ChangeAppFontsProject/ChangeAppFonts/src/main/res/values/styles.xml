@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <!-- FONTS -->
+    <style name="small_title_text">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingBottom">5dip</item>
+    </style>
+    <style name="small_body_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingBottom">5dip</item>
+    </style>
+    <style name="large_title_text">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingBottom">5dip</item>
+    </style>
+
+    <style name="large_body_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingBottom">5dip</item>
+    </style>
+
+    <!-- Base application theme is the default theme. -->
+    <style name="Theme" parent="android:Theme">
+    </style>
+
+    <style name="Theme.Small">
+        <item name="textTitle">@style/small_title_text</item>
+        <item name="textBody">@style/small_body_text</item>
+    </style>
+
+    <style name="Theme.Large">
+        <item name="textTitle">@style/large_title_text</item>
+        <item name="textBody">@style/large_body_text</item>
+    </style>
+
+</resources>
