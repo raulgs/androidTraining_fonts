@@ -36,6 +36,16 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+        if ("Large".equalsIgnoreCase( getIntent().getStringExtra( "Theme" )))
+        {
+            setTheme(R.style.Theme_Large);
+        }
+        else if ("Small".equalsIgnoreCase( getIntent().getStringExtra( "Theme" )))
+        {
+            setTheme(R.style.Theme_Small);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
