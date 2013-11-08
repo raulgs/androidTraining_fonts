@@ -2,6 +2,7 @@ package com.example.changeappfonts;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
 
@@ -33,8 +35,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
      */
     ViewPager mViewPager;
 
+    FontStyle previousFontStyle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        previousFontStyle = new Preferences(this).getFontStyle();
+        getTheme().applyStyle(new Preferences(this).getFontStyle().getResId(), true);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -84,12 +91,28 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     }
 
     @Override
+    public void onResume(){
+
+        super.onResume();
+
+        FontStyle fontstyle = new Preferences(this).getFontStyle();
+        if(!previousFontStyle.equals(fontstyle)){
+            Toast.makeText(this, fontstyle + "Text Selected", Toast.LENGTH_SHORT).show();
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_settings:
+                Intent intent = new Intent(this, PreferencesActivity.class);
+                this.startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
