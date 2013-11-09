@@ -41,6 +41,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     protected void onCreate(Bundle savedInstanceState) {
 
         previousFontStyle = new Preferences(this).getFontStyle();
+        if (previousFontStyle.equals(FontStyle.Small))
+        {
+            setTheme(R.style.Theme);
+        }
         getTheme().applyStyle(new Preferences(this).getFontStyle().getResId(), true);
 
         super.onCreate(savedInstanceState);
