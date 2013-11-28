@@ -9,6 +9,7 @@ buildscript {
 apply plugin: 'android'
 
 dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.android.support:support-v4:18.0.0'
 }
@@ -28,13 +29,13 @@ android {
 
     sourceSets {
         main {
-            manifest.srcFile 'src\\main\\AndroidManifest.xml'
-            java.srcDirs = ['src']
-            resources.srcDirs = ['src\\main']
+            //manifest.srcFile 'src\\main\\AndroidManifest.xml'
+            //java.srcDirs = ['src\\main']
+            //resources.srcDirs = ['src\\main']
             aidl.srcDirs = ['src\\main\\java']
-            renderscript.srcDirs = ['src\\main']
-            res.srcDirs = ['src\\main\\res']
-            assets.srcDirs = ['src\\main\\assets']
+            //renderscript.srcDirs = ['src\\main']
+            //res.srcDirs = ['src\\main\\res']
+            //assets.srcDirs = ['src\\main\\assets']
         }
 
         // Move the tests to tests/java, tests/res, etc...
@@ -46,8 +47,9 @@ android {
         // conflict with src/ being used by the main source set.
         // Adding new build types or product flavors should be accompanied
         // by a similar customization.
-        debug.setRoot('build-types/debug')
-        release.setRoot('build-types/release')
+
+        //debug.setRoot('build-types/debug')
+        //release.setRoot('build-types/release')
     }
 }
 

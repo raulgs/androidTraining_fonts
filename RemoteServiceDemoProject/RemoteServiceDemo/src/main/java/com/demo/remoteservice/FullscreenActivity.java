@@ -4,6 +4,7 @@ import com.demo.remoteservice.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -120,13 +121,15 @@ public class FullscreenActivity extends Activity {
         localButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(FullscreenActivity.this, LocalServiceActivities.Binding.class);
+                startActivity(intent);
             }
         });
         remoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(FullscreenActivity.this, RemoteService.Binding.class);
+                startActivity(intent);
             }
         });
     }
