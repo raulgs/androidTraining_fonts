@@ -25,11 +25,12 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:singleLine="true"
+
 
             android:hint="Select Airline"
             android:textSize="30sp"
-            custom:customFont="minion.otf"/>
+            custom:customFont="minion.otf"
+            />
 
         <com.demo.miscdemo.widget.EditTextPlus
             android:id="@+id/hintFlightNumberEditText"

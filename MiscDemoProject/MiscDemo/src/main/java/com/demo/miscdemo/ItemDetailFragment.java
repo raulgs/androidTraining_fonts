@@ -10,13 +10,15 @@ import android.widget.TextView;
 import com.demo.miscdemo.home.HomeFragmentList;
 import com.demo.miscdemo.pojo.FragmentItem;
 
+import java.io.Serializable;
+
 /**
  * A fragment representing a single Item detail screen.
  * This fragment is either contained in a {@link ItemListActivity}
  * in two-pane mode (on tablets) or a {@link ItemDetailActivity}
  * on handsets.
  */
-public class ItemDetailFragment extends Fragment {
+public class ItemDetailFragment extends Fragment  implements Serializable {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.

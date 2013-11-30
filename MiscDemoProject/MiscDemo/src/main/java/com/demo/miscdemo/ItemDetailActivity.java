@@ -3,6 +3,7 @@ package com.demo.miscdemo;
 import com.demo.miscdemo.pojo.FragmentItem;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,23 +11,25 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 /**
- * An activity representing a single Item detail screen. This
- * activity is only used on handset devices. On tablet-size devices,
- * item details are presented side-by-side with a list of items
- * in a {@link ItemListActivity}.
- * <p>
- * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link ItemDetailFragment}.
+ * An activity representing a single Item detail screen. This activity is only used on handset
+ * devices. On tablet-size devices, item details are presented side-by-side with a list of items in
+ * a {@link ItemListActivity}. <p> This activity is mostly just a 'shell' activity containing
+ * nothing more than a {@link ItemDetailFragment}.
  */
 public class ItemDetailActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
 
         // Show the Up button in the action bar.
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
+            if (getActionBar() != null) {
+                getActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+        }
 
         // savedInstanceState is non-null when there is fragment state
         // saved from previous configurations of this activity
@@ -54,6 +57,7 @@ public class ItemDetailActivity extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
             case android.R.id.home:
                 // This ID represents the Home or Up button. In the case of this

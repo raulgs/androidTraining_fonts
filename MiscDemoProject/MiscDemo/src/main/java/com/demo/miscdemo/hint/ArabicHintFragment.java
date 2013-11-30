@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 /**
  * Created by raulg on 11/28/13.
  */
-public class ArabicHintFragment extends Fragment {
+public class ArabicHintFragment extends Fragment implements Serializable{
 
     private FragmentItem mItem;
     private EditTextPlus airlineButton;
