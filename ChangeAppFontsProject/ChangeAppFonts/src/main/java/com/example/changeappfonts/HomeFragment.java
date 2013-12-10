@@ -52,11 +52,11 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
 
-                FontsOverride.setDefaultFont(getActivity(), "DEFAULT", "Molot.otf");
-                FontsOverride.setDefaultFont(getActivity(), "DEFAULT_BOLD", "Molot.otf");
-                FontsOverride.setDefaultFont(getActivity(), "MONOSPACE", "Molot.otf");
-                FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", "Molot.otf");
-                FontsOverride.setDefaultFont(getActivity(), "SERIF", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity(), "DEFAULT", FontsOverride.FONT_ARAB_TYPE);
+                FontsOverride.setDefaultFont(getActivity(), "DEFAULT_BOLD", FontsOverride.FONT_ARAB_TYPE);
+                FontsOverride.setDefaultFont(getActivity(), "MONOSPACE", FontsOverride.FONT_ARAB_TYPE);
+                FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", FontsOverride.FONT_ARAB_TYPE);
+                FontsOverride.setDefaultFont(getActivity(), "SERIF", FontsOverride.FONT_ARAB_TYPE);
                 FontsOverride.setDefaultFont(getActivity());
                 ReOpenActivity();
             }
