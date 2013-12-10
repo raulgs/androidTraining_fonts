@@ -1,10 +1,14 @@
 package com.example.changeappfonts;
 
+import com.example.changeappfonts.utils.FontsOverride;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -38,8 +42,45 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.home_fragment, container, false);
+
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+
+        Button overrideFontsButton = (Button) rootView.findViewById(R.id.home_override_fonts);
+        overrideFontsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FontsOverride.setDefaultFont(getActivity(), "DEFAULT", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity(), "DEFAULT_BOLD", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity(), "MONOSPACE", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity(), "SERIF", "Molot.otf");
+                FontsOverride.setDefaultFont(getActivity());
+                ReOpenActivity();
+            }
+        });
+
+        Button returnFontsButton = (Button) rootView.findViewById(R.id.home_return_fonts);
+        returnFontsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FontsOverride.setOriginalFonts();
+                ReOpenActivity();
+            }
+        });
+
         return rootView;
     }
+
+    private void ReOpenActivity(){
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
 }

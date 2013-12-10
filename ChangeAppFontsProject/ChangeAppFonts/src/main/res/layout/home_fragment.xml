@@ -45,4 +45,19 @@
         android:layout_width="wrap_content"
         android:text="Test Button"
         />
+
+    <Button
+        android:id="@+id/home_override_fonts"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Override fonts"
+        />
+
+    <Button
+        android:id="@+id/home_return_fonts"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Return fonts"
+        />
+
 </LinearLayout>
