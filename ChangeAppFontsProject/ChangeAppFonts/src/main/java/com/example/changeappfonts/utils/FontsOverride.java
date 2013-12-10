@@ -23,6 +23,8 @@ public final class FontsOverride {
 
     public static final String FONT_MOLOT = "Molot.otf";
     public static final String FONT_ARAB_TYPE = "arabtype.ttf";
+    public static final String FONT_DROID_REGULAR = "DroidNaskh-Regular.ttf";
+    public static final String FONT_DROID_BOLD = "DroidNaskh-Bold.ttf";
 
     private static final String DEFAULT_BOLD_FONT_FILENAME = FONT_MOLOT;
     private static final String DEFAULT_ITALIC_FONT_FILENAME = FONT_MOLOT;
@@ -37,12 +39,10 @@ public final class FontsOverride {
         replaceFont(staticTypefaceFieldName, regular);
     }
 
-    protected static void replaceFont(String staticTypefaceFieldName,
-                                      final Typeface newTypeface) {
+    protected static void replaceFont(String staticTypefaceFieldName, final Typeface newTypeface) {
 
         try {
-            final Field StaticField = Typeface.class
-                    .getDeclaredField(staticTypefaceFieldName);
+            final Field StaticField = Typeface.class.getDeclaredField(staticTypefaceFieldName);
             StaticField.setAccessible(true);
             StaticField.set(null, newTypeface);
         }
@@ -57,8 +57,7 @@ public final class FontsOverride {
     protected static void replaceFieldValue(String staticTypefaceFieldName, final Typeface[] newTypefaces) {
 
         try {
-            final Field StaticField = Typeface.class
-                    .getDeclaredField(staticTypefaceFieldName);
+            final Field StaticField = Typeface.class.getDeclaredField(staticTypefaceFieldName);
             StaticField.setAccessible(true);
             StaticField.set(null, newTypefaces);
         }
@@ -128,6 +127,21 @@ public final class FontsOverride {
             //cannot crash app if there is a failure with overriding the default font!
             e.printStackTrace();
         }
+    }
+
+    public static void setDefaultFont(Context context, String fontAssetName) {
+
+        final Typeface bold = Typeface.createFromAsset(context.getAssets(), fontAssetName);
+        final Typeface italic = Typeface.createFromAsset(context.getAssets(), fontAssetName);
+        final Typeface boldItalic = Typeface.createFromAsset(context.getAssets(), fontAssetName);
+        final Typeface regular = Typeface.createFromAsset(context.getAssets(), fontAssetName);
+
+        replaceFont("DEFAULT", regular);
+        replaceFont("DEFAULT_BOLD", regular);
+        replaceFieldValue("sDefaults", new Typeface[]{
+                regular, bold, italic, boldItalic
+        });
+
     }
 
     public static void setOriginalFonts() {

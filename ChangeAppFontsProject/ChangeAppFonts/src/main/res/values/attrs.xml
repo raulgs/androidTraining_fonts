@@ -6,4 +6,9 @@
         <attr name="font_large" format="dimension" />
         <attr name="font_xlarge" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="com.example.changeappfonts.widget.TextViewPlus">
+        <attr name="customFont" format="string"/>
+    </declare-styleable>
+
 </resources>

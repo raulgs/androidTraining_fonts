@@ -1,70 +1,141 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
     >
 
-    <RadioGroup
-        android:layout_width="fill_parent"
+    <ScrollView
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RadioButton
-            android:text="Large Text"
-            android:id="@+id/textSizeLarge"
+        android:layout_width="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </RadioButton>
-        <RadioButton
-            android:text="Small Text"
-            android:id="@+id/textSizeSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </RadioButton>
-    </RadioGroup>
-    <TextView
-        android:id="@+id/title"
-        style="@style/Label"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Select the size of the text"
-        />
-    <TextView
-        android:id="@+id/body"
-        style="@style/Label.XLarge"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/message"
-        />
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Test Button"
-        />
-
-    <Button
-        android:id="@+id/home_override_fonts"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Override fonts"
-        />
-
-    <Button
-        android:id="@+id/home_return_fonts"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Return fonts"
-        />
+            android:orientation="vertical">
 
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="لقرون، منذ فترة طويلة معترف بها قيمة الشاي. مع ثروة من الخبرة في تخمير الشاي، ربيع القمر الشاي ماستر، تيري تانغ، أزواج الأطباق الكانتونية مع الشاي عند الطلب. سيتم إعطاء فكرة مفصلة في أصول الشاي، التخمير وفوائده الصحية. تيري اختارت بدقة إضافات جديدة لقائمة الشاي، وبلغت ذروتها في 27 الخيارات، يحمل كل الخصائص المميزة. زيارة الربيع القمر ومعرفة المزيد حول لماذا لا تزال ثقافة الشاي مثل هذه الطقوس قاهرة اليوم."
-        />
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:text="Large Text"
+                    android:id="@+id/textSizeLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+
+                <RadioButton
+                    android:text="Small Text"
+                    android:id="@+id/textSizeSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Select the size of the text"
+                />
+
+            <TextView
+                android:id="@+id/body"
+                style="@style/Label.XLarge"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/message"
+                />
+
+            <TextView
+                android:id="@+id/section_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Test Button"
+                />
+
+            <HorizontalScrollView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Override fonts"
+                        />
+
+                    <Button
+                        android:id="@+id/home_override_fonts1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Arab Type"
+                        />
+
+                    <Button
+                        android:id="@+id/home_override_fonts2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Driod Naksh Regular"
+                        />
+
+                    <Button
+                        android:id="@+id/home_override_fonts3"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Driod Naksh Bold"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <Button
+                android:id="@+id/home_return_fonts"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Return fonts"
+                />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="25sp"
+                android:text="لقرون، منذ فترة طويلة معترف بها قيمة الشاي. مع ثروة من الخبرة في تخمير الشاي، ربيع القمر الشاي ماستر، تيري تانغ، أزواج الأطباق الكانتونية مع الشاي عند الطلب. سيتم إعطاء فكرة مفصلة في أصول الشاي، التخمير وفوائده الصحية. تيري اختارت بدقة إضافات جديدة لقائمة الشاي، وبلغت ذروتها في 27 الخيارات، يحمل كل الخصائص المميزة. زيارة الربيع القمر ومعرفة المزيد حول لماذا لا تزال ثقافة الشاي مثل هذه الطقوس قاهرة اليوم."
+                />
+
+            <com.example.changeappfonts.widget.TextViewPlus
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:typeface="normal"
+                android:textSize="25sp"
+                android:text="ABCDF 123213 فترة طويلة معترف بها"
+                />
+
+            <com.example.changeappfonts.widget.TextViewPlus
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                custom:customFont="minion.otf"
+                android:textSize="25sp"
+                android:text="ABCDF 123213 فترة طويلة معترف بها"
+                />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

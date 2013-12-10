@@ -46,11 +46,10 @@ public class HomeFragment extends Fragment {
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
 
-        Button overrideFontsButton = (Button) rootView.findViewById(R.id.home_override_fonts);
-        overrideFontsButton.setOnClickListener(new View.OnClickListener() {
+        Button overrideFontsButton1 = (Button) rootView.findViewById(R.id.home_override_fonts1);
+        overrideFontsButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 FontsOverride.setDefaultFont(getActivity(), "DEFAULT", FontsOverride.FONT_ARAB_TYPE);
                 FontsOverride.setDefaultFont(getActivity(), "DEFAULT_BOLD", FontsOverride.FONT_ARAB_TYPE);
@@ -58,6 +57,26 @@ public class HomeFragment extends Fragment {
                 FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", FontsOverride.FONT_ARAB_TYPE);
                 FontsOverride.setDefaultFont(getActivity(), "SERIF", FontsOverride.FONT_ARAB_TYPE);
                 FontsOverride.setDefaultFont(getActivity());
+                ReOpenActivity();
+            }
+        });
+
+        Button overrideFontsButton2 = (Button) rootView.findViewById(R.id.home_override_fonts2);
+        overrideFontsButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", FontsOverride.FONT_DROID_REGULAR);
+                ReOpenActivity();
+            }
+        });
+
+        Button overrideFontsButton3 = (Button) rootView.findViewById(R.id.home_override_fonts3);
+        overrideFontsButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FontsOverride.setDefaultFont(getActivity(), "SANS_SERIF", FontsOverride.FONT_DROID_BOLD);
                 ReOpenActivity();
             }
         });
