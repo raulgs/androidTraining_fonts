@@ -23,8 +23,11 @@ public class HomeFragmentList {
 
     static {
         // Add 3 sample items.
-        addItem(new FragmentItem("1", "Arabic Hint Issue", new ArabicHintFragment()));
-        addItem(new FragmentItem("2", "Item 2", new ItemDetailFragment()));
+
+        addItem(new FragmentItem("1", "Adjust System Volume", new AdjustSystemVolume()));
+
+        addItem(new FragmentItem("2", "Arabic Hint Issue", new ArabicHintFragment()));
+
         addItem(new FragmentItem("3", "Item 3", new ItemDetailFragment()));
     }
 

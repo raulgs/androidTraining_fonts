@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/volume_max"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Max Volume"
+        />
+
+    <Button
+        android:id="@+id/volume_min"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Min Volume"
+        />
+
+    <Button
+        android:id="@+id/volume_raise"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Adjust raise Volume"
+        />
+
+    <Button
+        android:id="@+id/volume_decrease"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Adjust decrease Volume"
+        />
+
+    <Button
+        android:id="@+id/volume_original"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Original Volume"
+        />
+
+</LinearLayout>
