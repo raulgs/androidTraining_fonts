@@ -26,9 +26,10 @@ public class HomeFragmentList {
 
         addItem(new FragmentItem("1", "Adjust System Volume", new AdjustSystemVolume()));
 
+        addItem(new FragmentItem("3", "Scrolling Text", new ScrollingTextFragment()));
+
         addItem(new FragmentItem("2", "Arabic Hint Issue", new ArabicHintFragment()));
 
-        addItem(new FragmentItem("3", "Item 3", new ItemDetailFragment()));
     }
 
     private static void addItem(FragmentItem item) {
