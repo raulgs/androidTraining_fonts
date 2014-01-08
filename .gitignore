@@ -213,3 +213,25 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+.metadata
+tmp/**
+.DS_Store
+*.tmp
+*.bak
+tmp/**/*
+*.swp
+*~.nib
+Thumbs.db
+Desktop.ini
+*~
+bin
+gen
+local.properties
+.idea
+out
+*.iml
+.gradle
+build
+
