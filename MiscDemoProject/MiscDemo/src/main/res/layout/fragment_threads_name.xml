@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              tools:context=".ThreadsNameFragment">
+
+    <TextView
+        android:id="@+id/threads_name_detail"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textIsSelectable="true"
+        android:text="Threads Name Test"
+        />
+
+    <Button
+        android:id="@+id/threads_name_stop_button"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+
+        android:text="Stop"
+        />
 
 </LinearLayout>

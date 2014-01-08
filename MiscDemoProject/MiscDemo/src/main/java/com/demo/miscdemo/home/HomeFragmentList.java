@@ -30,6 +30,8 @@ public class HomeFragmentList {
 
         addItem(new FragmentItem("2", "Arabic Hint Issue", new ArabicHintFragment()));
 
+        addItem(new FragmentItem("4", "Threads with same name", new ThreadsNameFragment()));
+
     }
 
     private static void addItem(FragmentItem item) {
